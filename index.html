@@ -1,61 +1,116 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf8" />
-    <title>Form Demo</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Worker Shifts</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
   </head>
   <body>
-    <form method="POST" action="/api/submit">
-      <div class="input">
-        <label for="name">Full Name</label>
-        <input id="name" name="name" type="text" />
+    <div class="container">
+      <header class="text-center"><h1>Student Worker Shifts</h1></header>
+      <div class="d-flex justify-content-evenly">
+        <!-- Add worker -->
+        <section class="w-50 me-5">
+          <h3 class="text-center">Workers</h3>
+          <div id="workersContainer">
+            <!-- <div
+              class="border border-info d-flex align-items-center justify-content-between"
+            >
+              <h4 class="m-2">Worker 1</h4>
+              <div class="justify-self-end">
+                <button class="btn btn-warning m-2">Edit</button>
+                <button class="btn btn-danger m-2">Delete</button>
+              </div>
+            </div> -->
+          </div>
+        </section>
+        <!-- View schedule for worker -->
+        <section class="w-50 ms-5">
+          <!-- create a table using bootstrap that stores the hours someone will be working in a week with an edit button -->
+          <h3 class="text-center">Schedule</h3>
+          <div id="scheduleContainer">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th scope="col">Day</th>
+                  <th scope="col">Start Time</th>
+                  <th scope="col">End Time</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Monday</th>
+                  <td>8:00 AM</td>
+                  <td>5:00 PM</td>
+                  <td>
+                    <button class="btn btn-warning">Edit</button>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Tuesday</th>
+                  <td>8:00 AM</td>
+                  <td>5:00 PM</td>
+                  <td>
+                    <button class="btn btn-warning">Edit</button>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Wednesday</th>
+                  <td>8:00 AM</td>
+                  <td>5:00 PM</td>
+                  <td>
+                    <button class="btn btn-warning">Edit</button>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Thursday</th>
+                  <td>8:00 AM</td>
+                  <td>5:00 PM</td>
+                  <td>
+                    <button class="btn btn-warning">Edit</button>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Friday</th>
+                  <td>8:00 AM</td>
+                  <td>5:00 PM</td>
+                  <td>
+                    <button class="btn btn-warning">Edit</button>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Saturday</th>
+                  <td>8:00 AM</td>
+                  <td>5:00 PM</td>
+                  <td>
+                    <button class="btn btn-warning">Edit</button>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Sunday</th>
+                  <td>8:00 AM</td>
+                  <td>5:00 PM</td>
+                  <td>
+                    <button class="btn btn-warning">Edit</button>
+                  </td>
+                </tr>
+        </section>
       </div>
-
-      <div class="input">
-        <label for="email">Email Address</label>
-        <input id="email" name="email" type="email" />
-      </div>
-
-      <div class="input">
-        <label for="referers">How did you hear about us?</label>
-        <select id="referers" name="referers">
-          <option hidden disabled selected value></option>
-          <option value="Facebook">Facebook</option>
-          <option value="Twitter">Twitter</option>
-          <option value="Google">Google</option>
-          <option value="Bing">Bing</option>
-          <option value="Friends">Friends</option>
-        </select>
-      </div>
-
-      <div class="checklist">
-        <label>What are your favorite movies?</label>
-        <ul>
-          <li>
-            <input id="m1" type="checkbox" name="movies" value="Space Jam" />
-            <label for="m1">Space Jam</label>
-          </li>
-          <li>
-            <input
-              id="m2"
-              type="checkbox"
-              name="movies"
-              value="Little Rascals"
-            />
-            <label for="m2">Little Rascals</label>
-          </li>
-          <li>
-            <input id="m3" type="checkbox" name="movies" value="Frozen" />
-            <label for="m3">Frozen</label>
-          </li>
-          <li>
-            <input id="m4" type="checkbox" name="movies" value="Home Alone" />
-            <label for="m4">Home Alone</label>
-          </li>
-        </ul>
-      </div>
-
-      <button type="submit">Submit</button>
-    </form>
+    </div>
+    <script>
+      import fetchAndPopulateList from "./fetchAndPopulateList.js";
+      window.onload = fetchAndPopulateList();
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
